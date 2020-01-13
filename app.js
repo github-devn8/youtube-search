@@ -41,6 +41,7 @@ $(function() {
                 </div>
               </li>`);
             });
+
             //By default, the first video of the search result will be played
             //display the title, the description and the channel name
             let video = data.items[0];
