@@ -32,7 +32,7 @@ $(function() {
             clearVideoList();
             videos.forEach((el) => {
                 //add channelTitle
-                videoList.append(`<li class="media mb-2" id="${el.id.videoId}">
+                videoList.append(`<li class="media mb-4" id="${el.id.videoId}">
                 <img src="${el.snippet.thumbnails.medium.url}" class="mr-3">
                 <div class="media-body">
                   <h5 class="mt-0 mb-1">${el.snippet.title}</h5>
@@ -65,33 +65,9 @@ $(function() {
     }
 
     //select the video
-    videoList.on("click", "li", function(e) {
-        e.preventDefault();
+    videoList.on("click", "li", function() {
         let id = $(this).attr("id");
-        findVideoById(id);
-
+        console.log(id);
     });
-
-    //find the video by id and play it
-    function findVideoById(id) {
-        $.ajax({
-            method: "GET",
-            url: "https://www.googleapis.com/youtube/v3/videos",
-            data: {
-                key: apiKey,
-                id: id,
-                part: "snippet"
-            }
-        }).done((data) => {
-            video = data.items[0];
-            if (video !== undefined) {
-                let snippet = video.snippet;
-                play(id, snippet.title, snippet.description, snippet.channelTitle);
-            }
-
-        }).fail(function(data) {
-            console.log(data);
-        });
-    }
 
 });
