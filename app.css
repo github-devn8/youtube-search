@@ -24,3 +24,11 @@ h6 {
     width: 168px;
     height: 94px;
 }
+
+
+/* select */
+
+#videoList li:hover {
+    border-right: 6px solid crimson;
+    cursor: pointer;
+}
