@@ -32,7 +32,7 @@ $(function() {
             clearVideoList();
             videos.forEach((el) => {
                 //add channelTitle
-                videoList.append(`<li class="media mb-4" id="${el.id.videoId}">
+                videoList.append(`<li class="media mb-4">
                 <img src="${el.snippet.thumbnails.medium.url}" class="mr-3">
                 <div class="media-body">
                   <h5 class="mt-0 mb-1">${el.snippet.title}</h5>
