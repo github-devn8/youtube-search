@@ -64,10 +64,5 @@ $(function() {
         $("#video-channelTitle").text(channelTitle);
     }
 
-    //select the video
-    videoList.on("click", "li", function() {
-        let id = $(this).attr("id");
-        console.log(id);
-    });
 
 });
